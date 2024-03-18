@@ -29,9 +29,7 @@ public class EmployeeController {
 
     @PostMapping
     public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) {
-        System.out.println(employee);
         if(employee.getDepartment() == null || employee.getDepartment().getId() == null) {
-            System.out.println("OK!!!!!!");
             throw new RuntimeException("El ID del departamento es requerido.");
         }
 
