@@ -22,6 +22,6 @@ public class DepartmentService {
 
     public Department getDepartmentById(Integer id){
         return departmentRepository.findById(id)
-                .orElseThrow(()->new EntityNotFoundException("Persona no encontrada con el ID: "+id));
+                .orElseThrow(()->new EntityNotFoundException("Departamento no encontrado con el ID: "+id));
     }
 }

@@ -31,4 +31,5 @@ public class EmployeeService {
         return employeeRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Persona no encontrada con el id: " + id));
     }
+
 }

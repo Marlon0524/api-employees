@@ -3,6 +3,7 @@ package com.employees.apirest.employee;
 
 import com.employees.apirest.department.Department;
 import com.employees.apirest.department.DepartmentRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,20 +13,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/employee")
 @RequiredArgsConstructor
+
 public class EmployeeController {
     private final EmployeeService employeeService;
     private final DepartmentRepository departmentRepository;
-
-
-   /*    @PostMapping
-    public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee, @RequestParam Integer departmentId) {
-        Department department = departmentRepository.findById(departmentId)
-                .orElseThrow(() -> new RuntimeException("Departamento no encontrado con el id: " + departmentId));
-
-        employee.setDepartment(department);
-        Employee newEmployee = employeeService.createEmployee(employee, departmentId); // Pasar employee y departmentId al servicio
-        return new ResponseEntity<>(newEmployee, HttpStatus.CREATED);
-    }*/
 
     @PostMapping
     public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) {
